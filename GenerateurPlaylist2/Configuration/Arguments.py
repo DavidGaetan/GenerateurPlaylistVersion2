@@ -2,25 +2,18 @@
 # -*- coding: utf-8 -*-
 
 
+
 import argparse
 import logging
-from Configuration.configurationFichierLogs import loggingConf
-#logging.basicConfig(filename='monFichierDeLog.log', level=logging.DEBUG)
 
 parser = argparse.ArgumentParser()
 
-
-
 '''Arguments obligatoire'''
-
 parser.add_argument("temps", help="informer la duree en minutes",type=int)
 parser.add_argument("nom", help="indiquer le nom du fichier de sortie")
 parser.add_argument("format", choices=['m3u', 'xspf', 'pls'], help="Choisir entre le format M3U, XSPF ou PLS ")
 
-
-
 '''Arguments optionnel'''
-
 parser.add_argument("-g", "--genre",action='append',nargs=2, help="indiquer le genre")
 parser.add_argument("-a", "--artiste",action='append', nargs=2, help="indiquer l'artiste")
 parser.add_argument("-A", "--album",action='append', nargs=2, help="indiquer l'album")
@@ -34,6 +27,6 @@ args=parser.parse_args()
 
 ''' On affiche les arguments obligatoire'''
 logging.info('----------INFO DES VALEURS des Arguments obligatoire---------')
-logging.info('le temps total de la playlist est de :'+args.temps)
+logging.info('le temps total de la playlist est de :'+str(args.temps))
 logging.info('Le nom de la playlist est :'+args.nom)
 logging.info('Le format de sortie est :'+args.format)

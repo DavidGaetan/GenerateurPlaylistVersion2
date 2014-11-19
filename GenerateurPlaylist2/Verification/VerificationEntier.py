@@ -8,10 +8,7 @@ Created on 15 oct. 2014
 '''
 
 import logging
-from Configuration.configurationFichierLogs import loggingConf
 from Configuration.Arguments import args
-
-loggingConf()
 
 def VerifcationEntier(laQuantite):
 
@@ -52,23 +49,15 @@ def VerifcationEntier(laQuantite):
         exit(1)
 
 
-
-
-
-
-
-
-
-
 def Verification ():
     '''Liste des arguments du programme'''
-    Attributs=['g','ar','sg','alb','t','r']
+    Attributs=['genre'] #,'ar','sg','alb','t','r']
 
 
     ''''Boucle pour parcourir la liste des arguments saisies par l'utilisateur'''
     for arg in Attributs:
         '''On initialise un compteur d'argument par option et le pourcentage total de la playlist'''
-        i,pourcentage=0
+        i,pourcentage=0,0
 
         if getattr(args, arg) is not None:
             ListeArg=getattr(args, arg)
